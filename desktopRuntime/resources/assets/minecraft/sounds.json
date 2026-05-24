@@ -2,42 +2,29 @@
   "ambient.cave.cave": {
     "category": "ambient",
     "sounds": [
-      "ambient/cave/cave1",
-      "ambient/cave/cave10",
-      "ambient/cave/cave11",
-      "ambient/cave/cave12",
-      "ambient/cave/cave13",
-      "ambient/cave/cave2",
-      "ambient/cave/cave3",
-      "ambient/cave/cave4",
-      "ambient/cave/cave5",
-      "ambient/cave/cave6",
-      "ambient/cave/cave7",
-      "ambient/cave/cave8",
-      "ambient/cave/cave9"
+      "fireworks/blast1",
+      "fireworks/largeBlast1",
+      "fireworks/twinkle1"
     ]
   },
   "ambient.weather.rain": {
     "category": "weather",
     "sounds": [
-      "ambient/weather/rain1",
-      "ambient/weather/rain2",
-      "ambient/weather/rain3",
-      "ambient/weather/rain4"
+      "liquid/lava"
     ]
   },
   "ambient.weather.thunder": {
     "category": "weather",
     "sounds": [
-      "ambient/weather/thunder1",
-      "ambient/weather/thunder2",
-      "ambient/weather/thunder3"
+      "mob/villager/idle1",
+      "mob/villager/idle2",
+      "mob/villager/idle3"
     ]
   },
   "game.player.hurt.fall.big": {
     "category": "player",
     "sounds": [
-      "damage/fallbig"
+      "random/levelup"
     ]
   },
   "game.player.hurt.fall.small": {
@@ -73,9 +60,7 @@
   "game.player.hurt": {
     "category": "player",
     "sounds": [
-      "damage/hit1",
-      "damage/hit2",
-      "damage/hit3"
+      "random/orb"
     ]
   },
   "game.neutral.hurt": {
@@ -97,9 +82,7 @@
   "game.player.die": {
     "category": "player",
     "sounds": [
-      "damage/hit1",
-      "damage/hit2",
-      "damage/hit3"
+      "random/splash"
     ]
   },
   "game.neutral.die": {
@@ -130,10 +113,9 @@
   "dig.grass": {
     "category": "block",
     "sounds": [
-      "dig/grass1",
-      "dig/grass2",
-      "dig/grass3",
-      "dig/grass4"
+      "mob/cow/say1",
+      "mob/cow/say2",
+      "mob/cow/say3"
     ]
   },
   "dig.gravel": {
@@ -166,31 +148,28 @@
   "dig.stone": {
     "category": "block",
     "sounds": [
-      "dig/stone1",
-      "dig/stone2",
-      "dig/stone3",
-      "dig/stone4"
+      "mob/bat/idle1",
+      "mob/bat/idle2",
+      "mob/bat/idle3",
+      "mob/bat/idle4"
     ]
   },
   "dig.wood": {
     "category": "block",
     "sounds": [
-      "dig/wood1",
-      "dig/wood2",
-      "dig/wood3",
-      "dig/wood4"
+      "mob/ghast/fireball4"
     ]
   },
   "fire.fire": {
     "category": "block",
     "sounds": [
-      "fire/fire"
+      "mob/chicken/say1"
     ]
   },
   "fire.ignite": {
     "category": "block",
     "sounds": [
-      "fire/ignite"
+      "mob/chicken/plop"
     ]
   },
   "item.fireCharge.use": {
@@ -202,7 +181,7 @@
   "fireworks.blast": {
     "category": "ambient",
     "sounds": [
-      "fireworks/blast1"
+      "ambient/cave/cave1"
     ]
   },
   "fireworks.blast_far": {
@@ -214,7 +193,7 @@
   "fireworks.largeBlast": {
     "category": "ambient",
     "sounds": [
-      "fireworks/largeBlast1"
+      "ambient/cave/cave2"
     ]
   },
   "fireworks.largeBlast_far": {
@@ -244,7 +223,7 @@
   "liquid.lava": {
     "category": "block",
     "sounds": [
-      "liquid/lava"
+      "ambient/weather/rain1"
     ]
   },
   "liquid.lavapop": {
@@ -277,10 +256,10 @@
   "game.player.swim": {
     "category": "player",
     "sounds": [
-      "liquid/swim1",
-      "liquid/swim2",
-      "liquid/swim3",
-      "liquid/swim4"
+      "dig/stone1",
+      "dig/stone2",
+      "dig/stone3",
+      "dig/stone4"
     ]
   },
   "game.neutral.swim": {
@@ -310,13 +289,13 @@
   "minecart.base": {
     "category": "neutral",
     "sounds": [
-      "minecart/base"
+      "mob/ghast/scream1"
     ]
   },
   "minecart.inside": {
     "category": "player",
     "sounds": [
-      "minecart/inside"
+      "mob/cat/meow1"
     ]
   },
   "mob.bat.death": {
@@ -1583,18 +1562,18 @@
   "random.eat": {
     "category": "player",
     "sounds": [
-      "random/eat1",
-      "random/eat2",
-      "random/eat3"
+      "random/explode1",
+      "random/explode2",
+      "random/explode3",
+      "random/explode4"
     ]
   },
   "random.explode": {
     "category": "block",
     "sounds": [
-      "random/explode1",
-      "random/explode2",
-      "random/explode3",
-      "random/explode4"
+      "random/eat1",
+      "random/eat2",
+      "random/eat3"
     ]
   },
   "random.fizz": {
@@ -1606,13 +1585,13 @@
   "game.tnt.primed": {
     "category": "block",
     "sounds": [
-      "random/fuse"
+      "random/levelup"
     ]
   },
   "creeper.primed": {
     "category": "hostile",
     "sounds": [
-      "random/fuse"
+      "random/levelup"
     ]
   },
   "dig.glass": {
@@ -1634,31 +1613,35 @@
   "random.levelup": {
     "category": "player",
     "sounds": [
-      "random/levelup"
+      "random/fuse"
     ]
   },
   "random.orb": {
     "category": "player",
     "sounds": [
-      "random/orb"
+      "damage/hit1",
+      "damage/hit2",
+      "damage/hit3"
     ]
   },
   "random.pop": {
     "category": "player",
     "sounds": [
-      "random/pop"
+      "random/successful_hit"
     ]
   },
   "random.splash": {
     "category": "player",
     "sounds": [
-      "random/splash"
+      "damage/hit1",
+      "damage/hit2",
+      "damage/hit3"
     ]
   },
   "random.successful_hit": {
     "category": "player",
     "sounds": [
-      "random/successful_hit"
+      "random/pop"
     ]
   },
   "random.wood_click": {
@@ -1787,12 +1770,9 @@
   "step.grass": {
     "category": "neutral",
     "sounds": [
-      "step/grass1",
-      "step/grass2",
-      "step/grass3",
-      "step/grass4",
-      "step/grass5",
-      "step/grass6"
+      "random/glass1",
+      "random/glass2",
+      "random/glass3"
     ]
   },
   "step.gravel": {
@@ -1836,35 +1816,27 @@
   "step.stone": {
     "category": "neutral",
     "sounds": [
-      "step/stone1",
-      "step/stone2",
-      "step/stone3",
-      "step/stone4",
-      "step/stone5",
-      "step/stone6"
+      "random/eat1",
+      "random/eat2",
+      "random/eat3"
     ]
   },
   "step.wood": {
     "category": "neutral",
     "sounds": [
-      "step/wood1",
-      "step/wood2",
-      "step/wood3",
-      "step/wood4",
-      "step/wood5",
-      "step/wood6"
+      "liquid/lavapop"
     ]
   },
   "tile.piston.in": {
     "category": "block",
     "sounds": [
-      "tile/piston/in"
+      "mob/bat/takeoff"
     ]
   },
   "tile.piston.out": {
     "category": "block",
     "sounds": [
-      "tile/piston/out"
+      "mob/bat/death"
     ]
   },
   "music.menu": {
