@@ -222,7 +222,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 	 * Called from the main game loop to update the screen.
 	 */
 	public void updateScreen() {
-		++this.panoramaTimer;
+		this.panoramaTimer += 2000;
 		if (downloadOfflineButton != null) {
 			downloadOfflineButton.enabled = !UpdateService.shouldDisableDownloadButton();
 		}

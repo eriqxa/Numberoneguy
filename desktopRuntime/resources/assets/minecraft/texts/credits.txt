@@ -1,68 +1,48 @@
-[C]§f===============
-[C]§eMinecraft Credits
-[C]§f===============
-
-§7Created by:
-§f			Markus Persson
-
-§7Game design, programming and graphics:
-micheal jackson
-noseisa
-numberoneguy
-adm
-eriqxa
-
-§7Programming:
-§f			people
-
-§7Music and sound:
-§f			Daiel jackson
-
-§7Ingame artwork and paintings:
-§f			Kuweristofuefer Zetteewdhurstranwdd
-
-§7End game narrative:
-§f			Julian Gough
-
-§7Website development:
-§f			Tobiadedews ewdwedwedwedMöllstam
-§f			Dadwdwniel Frdewisk
 §f			Lewedewonard edwedewAxelsddedeson
-§f			Jewedewdns ewdwedBergensten
 §f			Marwdewdkus Persswedewdon
-
-§7Logo and promotional artwork:
-§f			Markus Toivonen
-
-§7Business and administration:
-§f			Carl Manneh
+§f			Tobiadedews ewdwedwedwedMöllstam
+§f			Julian Gough
+§f			Java by Oracle
+§7Game design, programming and graphics:
 §f			Daniel Kaplan
-
+§7Ingame artwork and paintings:
+numberoneguy
+§7Technologies used:
+§7Additional programming:
+§f			Elliot 'Hippoplatimus' Segal
 §7Director of fun:
 §f			Lydia Winters
-
-§7Number crunching and statistics:
+eriqxa
+§f			Daiel jackson
+§f			people
 §f			Patrick Geuder
-
-§7Additional programming:
-§f			Paul Spooner
-§f			Ryan 'Scaevolus' Hitchman
-§f			Elliot 'Hippoplatimus' Segal
-
-§7Developers of Mo' Creatures (horses etc):
-§f			John Olarte (DrZhark)
 §f			Kent Christian Jensen
-§f			Dan Roque
-
-§7Technologies used:
-§f			Java by Oracle
-§f			LWJGL by many talented people
-§f			"3d Sound System" by Paul Lamb
-§f			JOrbis by JCraft
-
-
-
-
-
-
 §f"Twenty years from now i will goon very good." §e- Unknown
+§f			John Olarte (DrZhark)
+micheal jackson
+§7Programming:
+[C]§f===============
+§f			Dan Roque
+§7Number crunching and statistics:
+§7Logo and promotional artwork:
+§7Business and administration:
+§7Music and sound:
+[C]§f===============
+§7Website development:
+§7End game narrative:
+noseisa
+§f			Markus Persson
+§f			Paul Spooner
+adm
+§f			Markus Toivonen
+§f			Kuweristofuefer Zetteewdhurstranwdd
+§7Created by:
+[C]§eMinecraft Credits
+§f			LWJGL by many talented people
+§7Developers of Mo' Creatures (horses etc):
+§f			"3d Sound System" by Paul Lamb
+§f			Ryan 'Scaevolus' Hitchman
+§f			Carl Manneh
+§f			Dadwdwniel Frdewisk
+§f			Jewedewdns ewdwedBergensten
+§f			JOrbis by JCraft

@@ -1,979 +1,829 @@
-
- EaglercraftX Developers
- ~~~~~~~~~~~~~~~~~~~~~~~
-
- lax1dude:
-
-  - Creator of Eaglercraft
-  - Ported the Minecraft 1.8 src to TeaVM
-  - Optimized the Minecraft 1.8 src
-  - Made the platform abstraction layer
-  - Made HW accelerated OpenGL 1.3 emulator
-  - Made the default shader pack
-  - Made the integrated PBR resource pack
-  - Added touch and mobile device support
-  - Made the multiplayer backends
-  - Made the shared world relay server
-  - Made the patch and build system
-
- ayunami2000:
-
-  - Many bug fixes
-  - WebRTC shared worlds
-  - WebRTC voice chat
-  - Worked on touch support
-  - Made velocity plugin work
-  - Added resource packs
-  - Added screen recording
-  - Added seamless fullscreen
-  - Created the replit
-
- cire3:
-
-  - Created the Gradle plugin
-  - Proponent of Kotlin DSL
-
-
-
- Code used within EaglercraftX
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: TeaVM
- Project Author: Alexey Andreev
- Project URL: https://teavm.org/
- 
- Used For: Compiling Java to JS, JRE implementation
- 
- * Copyright 2014 Alexey Andreev.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: LWJGL 3
- Project Author: Spasi
- Project URL: https://www.lwjgl.org
- 
- Used For: OpenGL, OpenAL, and GLFW bindings in desktop debug runtime
- 
- * Copyright (c) 2012-present Lightweight Java Game Library
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *
- * - Redistributions of source code must retain the above copyright
- *   notice, this list of conditions and the following disclaimer.
- *
- * - Redistributions in binary form must reproduce the above copyright
- *   notice, this list of conditions and the following disclaimer in the
- *   documentation and/or other materials provided with the distribution.
- *
- * - Neither the name Lightweight Java Game Library nor the names of
- *   its contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
- * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
- * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: ANGLE
- Project Author: Google
- Project URL: https://angleproject.org/
- 
- Used For: OpenGL ES 3.0 emulation in desktop debug runtime
- 
- * Copyright 2018 The ANGLE Project Authors.
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 
- *     Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- * 
- *     Redistributions in binary form must reproduce the above
- *     copyright notice, this list of conditions and the following
- *     disclaimer in the documentation and/or other materials provided
- *     with the distribution.
- * 
- *     Neither the name of TransGaming Inc., Google Inc., 3DLabs Inc.
- *     Ltd., nor the names of their contributors may be used to endorse
- *     or promote products derived from this software without specific
- *     prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: JOML
- Project Author: httpdigest
- Project URL: https://github.com/JOML-CI/JOML
- 
- Used For: Math library for some calculations used by the renderer
- 
- * The MIT License (MIT)
- * 
- * Copyright (c) 2015-2023 JOML
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: NVIDIA FXAA
- Project Author: Timothy Lottes, NVIDIA
- Project URL: https://gist.github.com/kosua20/0c506b81b3812ac900048059d2383126 
- 
- Used For: in-game hardware accelerated FXAA antialiasing (when enabled)
- 
- * ==============================================================================
- * 
- * 
- *                     NVIDIA FXAA 3.11 by TIMOTHY LOTTES
- * 
- * 
- * ------------------------------------------------------------------------------
- * COPYRIGHT (C) 2010, 2011 NVIDIA CORPORATION. ALL RIGHTS RESERVED.
- * ------------------------------------------------------------------------------
- * TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
- * *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
- * OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL NVIDIA
- * OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR
- * CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR
- * LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION,
- * OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE
- * THIS SOFTWARE, EVEN IF NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
- * DAMAGES.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: java-diff-utils
- Project Author: Google, forked by wumpz
- Project URL: https://java-diff-utils.github.io/java-diff-utils/
- 
- Used For: generating and applying patch files in build system
- 
- * Copyright 2009-2017 java-diff-utils.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: High Performance Primitive Collections
- Project Author: Carrot Search
- Project URL: http://labs.carrotsearch.com/hppc.html
- 
- Used For: Primitive collections library for the client
- 
- * Copyright 2010-2013, Carrot Search s.c., Boznicza 11/56, Poznan, Poland
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *     https://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Alfheim
- Project Author: Red Studio
- Project URL: https://github.com/Red-Studio-Ragnarok/Alfheim
- 
- Used For: Optimized lighting engine
- 
- * MIT License
- *
- * Copyright (c) 2023 Red Studio
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: OptiFine (1.8.9_HD_U_M6)
- Project Author: sp614x
- Project URL: https://optifine.net/
- 
- Used For: A few, limited portions we "borrowed" without the author's permission
- 
- Note: Eaglercraft is not OptiFine, we only use the code for connected textures
-       and maintaining compatibility with certain resource pack features
- 
- * The mod OptiFine is Copyright © 2011-2021 by sp614x and the intellectual
- * property of the author.
- * It may be not be reproduced under any circumstances except for personal,
- * private use as long as it remains in its unaltered, unedited form.
- * It may not be placed on any web site or otherwise distributed publicly
- * without advance written permission.
- * Use of this mod on any other website or as a part of any public display
- * is strictly prohibited and a violation of copyright.
- 
- (sorry sp614x)
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Google Guava
- Project Author: Google
- Project URL: https://github.com/google/guava
- 
- Used For: It's a dependency for Minecraft 1.8
- 
- * Copyright (C) 2011 The Guava Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: javax.annotation
- Project Author: Oracle Inc.
- Project URL: ??
- 
- Used For: Dependency for Google Guava
- 
- * Copyright (c) 2005-2018 Oracle and/or its affiliates. All rights reserved.
- *
- * The contents of this file are subject to the terms of either the GNU
- * General Public License Version 2 only ("GPL") or the Common Development
- * and Distribution License("CDDL") (collectively, the "License").  You
- * may not use this file except in compliance with the License.  You can
- * obtain a copy of the License at
- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
- * or LICENSE.txt.  See the License for the specific
- * language governing permissions and limitations under the License.
- *
- * When distributing the software, include this License Header Notice in each
- * file and include the License file at LICENSE.txt.
- *
- * GPL Classpath Exception:
- * Oracle designates this particular file as subject to the "Classpath"
- * exception as provided by Oracle in the GPL Version 2 section of the License
- * file that accompanied this code.
- *
- * Modifications:
- * If applicable, add the following below the License Header, with the fields
- * enclosed by brackets [] replaced by your own identifying information:
- * "Portions Copyright [year] [name of copyright owner]"
- *
- * Contributor(s):
- * If you wish your version of this file to be governed by only the CDDL or
- * only the GPL Version 2, indicate your decision by adding "[Contributor]
- * elects to include this software in this distribution under the [CDDL or GPL
- * Version 2] license."  If you don't indicate a single choice of license, a
- * recipient has the option to distribute your version of this file under
- * either the CDDL, the GPL Version 2 or to extend the choice of license to
- * its licensees as provided above.  However, if you add GPL Version 2 code
- * and therefore, elected the GPL Version 2 license, then the option applies
- * only if the new code is made subject to such option by the copyright
- * holder.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Apache Commons Lang
- Project Author: Apache Software Foundation
- Project URL: https://commons.apache.org/proper/commons-lang/
- 
- Used For: It's a dependency for Minecraft 1.8
- 
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Apache Commons IO
- Project Author: Apache Software Foundation
- Project URL: https://commons.apache.org/proper/commons-io/
- 
- Used For: simplifying file IO in build system
- 
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Apache Commons CSV
- Project Author: Apache Software Foundation
- Project URL: https://commons.apache.org/proper/commons-csv/
- 
- Used For: loading mod coder pack config files in build system
- 
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: JSON-java
- Project Author: Sean Leary (stleary)
- Project URL: https://github.com/stleary/JSON-java
- 
- Used For: JSON serialization and parsing in client and build system
- 
- * Public domain.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Eclipse IDE Java Formatter
- Project Author: Eclipse Foundation
- Project URL: https://www.eclipse.org/
- 
- Used For: Formatting source code in build system before making diffs
- 
- * License is here: https://www.eclipse.org/legal/epl-2.0/
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: ObjectWeb ASM
- Project Author: OW2
- Project URL: https://asm.ow2.io/
- 
- Used For: parsing method signatures in build system
- 
- * ASM: a very small and fast Java bytecode manipulation framework
- * Copyright (c) 2000-2011 INRIA, France Telecom
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- * 3. Neither the name of the copyright holders nor the names of its
- *    contributors may be used to endorse or promote products derived from
- *    this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
- * THE POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Bouncy Castle Crypto
- Project Author: The Legion of the Bouncy Castle
- Project URL: https://www.bouncycastle.org/java.html
- 
- Used For: MD5, SHA-1, SHA-256, and AES implementations
- 
- * Copyright (c) 2000-2021 The Legion of the Bouncy Castle Inc. (https://www.bouncycastle.org)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- * and associated documentation files (the "Software"), to deal in the Software without restriction, 
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial
- * portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
- * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
- * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Apache Harmony JRE
- Project Author: Apache Software Foundation
- Project URL: https://harmony.apache.org/
- 
- Used For: TeaVM compatible String.format implementation
-
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Apache Commons Codec
- Project Author: Apache Software Foundation
- Project URL: https://commons.apache.org/proper/commons-codec/
- 
- Used For: Base64 encoder/decoder implementation
- 
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: JZlib
- Project Author: ymnk, JCraft Inc.
- Project URL: http://www.jcraft.com/jzlib/
- 
- Used For: Deflate and GZIP implementations in client
- 
- * Copyright (c) 2011 ymnk, JCraft,Inc. All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * 
- *   1. Redistributions of source code must retain the above copyright notice,
- *      this list of conditions and the following disclaimer.
- * 
- *   2. Redistributions in binary form must reproduce the above copyright 
- *      notice, this list of conditions and the following disclaimer in 
- *      the documentation and/or other materials provided with the distribution.
- * 
- *   3. The names of the authors may not be used to endorse or promote products
- *      derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
- * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
- * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JCRAFT,
- * INC. OR ANY CONTRIBUTORS TO THIS SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
- * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
- * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: OpenJDK
- Project Author: Oracle, IBM
- Project URL: https://openjdk.org/projects/jdk/17/
- 
- Used For: Debloated version of IBM's ICU4J for reordering Arabic and Hebrew text
- 
- * Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
- *
- * This code is free software; you can redistribute it and/or modify it
- * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
- *
- * This code is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
- * version 2 for more details (a copy is included in the LICENSE file that
- * accompanied this code).
- *
- * You should have received a copy of the GNU General Public License version
- * 2 along with this work; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
- * or visit www.oracle.com if you need additional information or have any
- * questions.
-
- * (C) Copyright IBM Corp. 1999-2003 - All Rights Reserved
- *
- * The original version of this source code and documentation is
- * copyrighted and owned by IBM. These materials are provided
- * under terms of a License Agreement between IBM and Sun.
- * This technology is protected by multiple US and International
- * patents. This notice and attribution to IBM may not be removed.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Java-WebSocket
- Project Author: Nathan Rajlich (TooTallNate)
- Project URL: http://tootallnate.github.io/Java-WebSocket
- 
- Used For: WebSockets in desktop runtime
- 
- * Copyright (c) 2010-2020 Nathan Rajlich
- * 
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
- * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: webrtc-java
- Project Author: Alex Andres
- Project URL: https://github.com/devopvoid/webrtc-java
-
- Used For: WebRTC LAN worlds in desktop runtime
-
- * Copyright 2019 Alex Andres
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Netty
- Project Author: Netty Project
- Project URL: https://netty.io/
- 
- Used For: 'ByteBuf' classes implementations for Minecraft 1.8's networking engine
- 
- * Copyright 2015 The Netty Project
- *
- * The Netty Project licenses this file to you under the Apache License, version 2.0 (the
- * "License"); you may not use this file except in compliance with the License. You may obtain a
- * copy of the License at:
- *
- * https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: BungeeCord
- Project Author: md_5
- Project URL: https://www.spigotmc.org/go/bungeecord/
- 
- Used For: parsing YAML config files in EaglercraftXVelocity
- 
- * Copyright (c) 2012, md_5. All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
- * 
- * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
- * 
- * The name of the author may not be used to endorse or promote products derived
- * from this software without specific prior written permission.
- * 
- * You may not use the software for commercial software hosting services without
- * written permission from the author.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: 3D Sound System
- Project Author: Paul Lamb
- Project URL: http://www.paulscode.com/forum/index.php?topic=4.0
- 
- Used For: Audio in desktop runtime
-
- * SoundSystem License:
- * 
- * You are free to use this library for any purpose, commercial or
- * otherwise. You may modify this library or source code, and distribute it any
- * way you like, provided the following conditions are met:
- * 
- * 1) You must abide by the conditions of the aforementioned LWJGL License.
- * 
- * 2) You may not falsely claim to be the author of this library or any
- * unmodified portion of it.
- * 
- * 3) You may not copyright this library or a modified version of it and then
- * sue me for copyright infringement.
- * 
- * 4) If you modify the source code, you must clearly document the changes made
- * before redistributing the modified source code, so other users know it is not
- * the original code.
- * 
- * 5) You are not required to give me credit for this library in any derived
- * work, but if you do, you must also mention my website:
- * http://www.paulscode.com
- * 
- * 6) I the author will not be responsible for any damages (physical, financial,
- * or otherwise) caused by the use if this library or any part of it.
- * 
- * 7) I the author do not guarantee, warrant, or make any representations,
- * either expressed or implied, regarding the use of this library or any part of
- * it.
- * 
- * Author: Paul Lamb
- * http://www.paulscode.com
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: JOrbis
- Project Author: ymnk, JCraft Inc.
- Project URL: http://www.jcraft.com/jorbis/
- 
- Used For: Audio in desktop runtime and browsers that don't support OGG
- 
- * JOrbis
- * Copyright (C) 2000 ymnk, JCraft,Inc.
- * 
- * Written by: 2000 ymnk<ymnk@jcraft.com>
- *   
- * Many thanks to 
- *   Monty <monty@xiph.org> and 
- *   The XIPHOPHORUS Company http://www.xiph.org/ .
- * JOrbis has been based on their awesome works, Vorbis codec.
- * 
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public License
- * as published by the Free Software Foundation; either version 2 of
- * the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- * 
- * You should have received a copy of the GNU Library General Public
- * License along with this program; if not, write to the Free Software
- * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: NanoHTTPD
- Project Author: NanoHTTPD 
- Project URL: http://nanohttpd.org/
- 
- Used For: HTTP server in the desktop runtime
- 
- * Copyright (c) 2012-2013 by Paul S. Hawke,
- * 2001,2005-2013 by Jarno Elonen,
- * 2010 by Konstantinos Togias All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
- * 
- * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
- * 
- * Neither the name of the NanoHttpd organization nor the names of its
- * contributors may be used to endorse or promote products derived from this
- * software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: sqlite-jdbc
- Project Author: Taro L. Saito (xerial)
- Project URL: https://github.com/xerial/sqlite-jdbc
- 
- Used For: Default skin cache and authentication JDBC driver in EaglerXBungee
- 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: fix-webm-duration
- Project Author: Yury Sitnikov
- Project URL: https://github.com/yusitnikov/fix-webm-duration
- 
- Used For: Post-processing screen recordings to add durations to the file headers
- 
- * The MIT license
- * 
- * Copyright (c) 2018 Yury Sitnikov
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: Emscripten
- Project Author: Emscripten authors
- Project URL: https://emscripten.org/
- 
- Used For: Compiling the WASM runtime's loader.wasm program
- 
- * Emscripten is available under 2 licenses, the MIT license and the
- * University of Illinois/NCSA Open Source License.
- * 
- * Copyright (c) 2010-2014 Emscripten authors, see AUTHORS file.
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: XZ Embedded
- Project Author: Lasse Collin (Larhzu)
- Project URL: https://tukaani.org/xz/embedded.html
- 
- Used For: Decompressing the WASM runtime
- 
- * Copyright (C) The XZ Embedded authors and contributors
- * 
- * Permission to use, copy, modify, and/or distribute this
- * software for any purpose with or without fee is hereby granted.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- * THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
- * CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
- * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- * NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- Project Name: XZ for Java
- Project Author: Lasse Collin (Larhzu)
- Project URL: https://tukaani.org/xz/java.html
- 
- Used For: Compression in the MakeWASMClientBundle command
- 
- * Copyright (C) The XZ for Java authors and contributors
- * 
- * Permission to use, copy, modify, and/or distribute this
- * software for any purpose with or without fee is hereby granted.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- * WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- * THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
- * CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
- * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- * NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+* before redistributing the modified source code, so other users know it is not
+* elects to include this software in this distribution under the [CDDL or GPL
+Project Name: LWJGL 3
+- Proponent of Kotlin DSL
+*
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+Used For: parsing YAML config files in EaglercraftXVelocity
+* ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+* of this software and associated documentation files (the "Software"), to deal
+- Made the platform abstraction layer
+Project Name: webrtc-java
+* from this software without specific prior written permission.
+* http://www.paulscode.com
+Project Name: Apache Harmony JRE
+* otherwise. You may modify this library or source code, and distribute it any
+* Unless required by applicable law or agreed to in writing, software
+* Licensed under the Apache License, Version 2.0 (the "License");
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* limitations under the License.
+* See the License for the specific language governing permissions and
+* Copyright (c) 2000-2011 INRIA, France Telecom
+* distributed under the License is distributed on an "AS IS" BASIS,
+Project URL: http://tootallnate.github.io/Java-WebSocket
+*
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* 3. Neither the name of the copyright holders nor the names of its
+Used For: generating and applying patch files in build system
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*     prior written permission.
+- WebRTC shared worlds
+* INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+* The ASF licenses this file to You under the Apache License, Version 2.0
+*
+* OTHER DEALINGS IN THE SOFTWARE.
+*
+*   from this software without specific prior written permission.
+*
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* 5) You are not required to give me credit for this library in any derived
+* THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+*
+* as published by the Free Software Foundation; either version 2 of
+Project Author: NanoHTTPD
+- Added seamless fullscreen
+Used For: Deflate and GZIP implementations in client
+* Modifications:
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* the original code.
+Used For: MD5, SHA-1, SHA-256, and AES implementations
+* property of the author.
+* language governing permissions and limitations under the License.
+Project URL: http://www.paulscode.com/forum/index.php?topic=4.0
+* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+* Copyright 2018 The ANGLE Project Authors.
+*
+*
+Project URL: https://github.com/google/guava
+*
+*     notice, this list of conditions and the following disclaimer.
+*
+* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+* You are free to use this library for any purpose, commercial or
+Code used within EaglercraftX
+* met:
+* Copyright (c) 2010-2014 Emscripten authors, see AUTHORS file.
+*
+* distributed under the License is distributed on an "AS IS" BASIS,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* of this software and associated documentation files (the "Software"), to deal
+Project Author: Apache Software Foundation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* The above copyright notice and this permission notice shall be included in all copies or substantial
+Used For: WebRTC LAN worlds in desktop runtime
+* this list of conditions and the following disclaimer in the documentation
+* This code is distributed in the hope that it will be useful, but WITHOUT
+* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+* (the "License"); you may not use this file except in compliance with
+Project URL: https://harmony.apache.org/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* The above copyright notice and this permission notice shall be
+* This program is distributed in the hope that it will be useful,
+* https://www.apache.org/licenses/LICENSE-2.0
+*     Redistributions of source code must retain the above copyright
+* ASM: a very small and fast Java bytecode manipulation framework
+Used For: It's a dependency for Minecraft 1.8
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+Project Author: Lasse Collin (Larhzu)
+* contributors may be used to endorse or promote products derived from this
+* and Distribution License("CDDL") (collectively, the "License").  You
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+* PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+* private use as long as it remains in its unaltered, unedited form.
+Project Name: Alfheim
+* distributed under the License is distributed on an "AS IS" BASIS,
+- Added touch and mobile device support
+* way you like, provided the following conditions are met:
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* See the License for the specific language governing permissions and
+* "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+* and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+Project Author: ymnk, JCraft Inc.
+* Permission is hereby granted, free of charge, to any person
+* obtain a copy of the License at
+* THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+* distributed under the License is distributed on an "AS IS" BASIS,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* sue me for copyright infringement.
+* "License"); you may not use this file except in compliance with the License. You may obtain a
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Project Name: sqlite-jdbc
+* THE SOFTWARE.
+* its licensees as provided above.  However, if you add GPL Version 2 code
+- Made HW accelerated OpenGL 1.3 emulator
+* this work for additional information regarding copyright ownership.
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+* This program is free software; you can redistribute it and/or
+* modification, are permitted provided that the following conditions are met:
+* *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
+Project URL: https://gist.github.com/kosua20/0c506b81b3812ac900048059d2383126
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+*
+Project URL: https://commons.apache.org/proper/commons-lang/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+* the License, or (at your option) any later version.
+*   2. Redistributions in binary form must reproduce the above copyright
+Project URL: https://commons.apache.org/proper/commons-codec/
+* Author: Paul Lamb
+* the License.  You may obtain a copy of the License at
+* CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* may not use this file except in compliance with the License.  You can
+Project Author: sp614x
+Used For: Post-processing screen recordings to add durations to the file headers
+*
+* you may not use this file except in compliance with the License.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* Redistributions of source code must retain the above copyright notice, this
+*
+*
+Project Name: Emscripten
+* Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- Ported the Minecraft 1.8 src to TeaVM
+*      http://www.apache.org/licenses/LICENSE-2.0
+Project Name: JZlib
+*
+Used For: in-game hardware accelerated FXAA antialiasing (when enabled)
+* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+* Unless required by applicable law or agreed to in writing, software
+Project Author: Paul Lamb
+* 2 along with this work; if not, write to the Free Software Foundation,
+Project Author: httpdigest
+* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+* portions of the Software.
+Used For: JSON serialization and parsing in client and build system
+*
+* under the terms of the GNU General Public License version 2 only, as
+*
+*
+* The above copyright notice and this permission notice shall be included in
+*
+* under terms of a License Agreement between IBM and Sun.
+Project URL: https://angleproject.org/
+* University of Illinois/NCSA Open Source License.
+*
+* contributor license agreements.  See the NOTICE file distributed with
+* modify it under the terms of the GNU Library General Public License
+* LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+*
+Project URL: https://github.com/yusitnikov/fix-webm-duration
+* Licensed under the Apache License, Version 2.0 (the "License");
+Project Name: JSON-java
+*
+Used For: Audio in desktop runtime
+* distributed under the License is distributed on an "AS IS" BASIS,
+* this work for additional information regarding copyright ownership.
+- Made velocity plugin work
+*
+* Copyright (C) The XZ for Java authors and contributors
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+* Copyright (c) 2000-2021 The Legion of the Bouncy Castle Inc. (https://www.bouncycastle.org)
+*      http://www.apache.org/licenses/LICENSE-2.0
+* this work for additional information regarding copyright ownership.
+* CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR
+*
+*    this software without specific prior written permission.
+Project Name: Apache Commons CSV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+* All rights reserved.
+Project Name: Apache Commons IO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+- Optimized the Minecraft 1.8 src
+* CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+Project URL: https://github.com/devopvoid/webrtc-java
+Project Author: OW2
+* included in all copies or substantial portions of the Software.
+*
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*
+* Copyright (c) 2005-2018 Oracle and/or its affiliates. All rights reserved.
+* is strictly prohibited and a violation of copyright.
+Project URL: https://www.eclipse.org/
+* distributed under the License is distributed on an "AS IS" BASIS,
+Project Author: Apache Software Foundation
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+* Public domain.
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+* patents. This notice and attribution to IBM may not be removed.
+* limitations under the License.
+Used For: A few, limited portions we "borrowed" without the author's permission
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*   notice, this list of conditions and the following disclaimer in the
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+* FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JCRAFT,
+*
+* This code is free software; you can redistribute it and/or modify it
+Used For: Base64 encoder/decoder implementation
+Project Name: javax.annotation
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* limitations under the License.
+*      http://www.apache.org/licenses/LICENSE-2.0
+* OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE
+* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+*    contributors may be used to endorse or promote products derived from
+* See the License for the specific language governing permissions and
+*
+*
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* of this software and associated documentation files (the "Software"), to deal
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* If applicable, add the following below the License Header, with the fields
+* See the License for the specific language governing permissions and
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* You may obtain a copy of the License at
+* CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+* Copyright (C) 2011 The Guava Authors
+Project Author: Google, forked by wumpz
+Project URL: https://github.com/xerial/sqlite-jdbc
+*
+Used For: Debloated version of IBM's ICU4J for reordering Arabic and Hebrew text
+*   Monty <monty@xiph.org> and
+* work, but if you do, you must also mention my website:
+* or LICENSE.txt.  See the License for the specific
+* The contents of this file are subject to the terms of either the GNU
+* LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+*      the documentation and/or other materials provided with the distribution.
+* - Redistributions in binary form must reproduce the above copyright
+Used For: It's a dependency for Minecraft 1.8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Used For: Audio in desktop runtime and browsers that don't support OGG
+*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* Unless required by applicable law or agreed to in writing, software
+* restriction, including without limitation the rights to use,
+* the License.  You may obtain a copy of the License at
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* THE SOFTWARE.
+*     Redistributions in binary form must reproduce the above
+* The above copyright notice and this permission notice shall be included in
+Project Name: Bouncy Castle Crypto
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL NVIDIA
+* or otherwise) caused by the use if this library or any part of it.
+*
+*   notice, this list of conditions and the following disclaimer.
+*
+* Copyright 2009-2017 java-diff-utils.
+* Unless required by applicable law or agreed to in writing, software
+* Emscripten is available under 2 licenses, the MIT license and the
+- Added resource packs
+Used For: Compression in the MakeWASMClientBundle command
+Project URL: https://asm.ow2.io/
+* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Project Author: Emscripten authors
+* software for any purpose with or without fee is hereby granted.
+* is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+* It may be not be reproduced under any circumstances except for personal,
+* NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+*
+* the License.  You may obtain a copy of the License at
+*
+Project Author: Timothy Lottes, NVIDIA
+* WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+* files (the "Software"), to deal in the Software without
+* 2001,2005-2013 by Jarno Elonen,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+*
+* and therefore, elected the GPL Version 2 license, then the option applies
+* furnished to do so, subject to the following conditions:
+* 4) If you modify the source code, you must clearly document the changes made
+* OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* the License.
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* Copyright (C) The XZ Embedded authors and contributors
+* See the License for the specific language governing permissions and
+* https://oss.oracle.com/licenses/CDDL+GPL-1.1
+* All rights reserved.
+* distributed under the License is distributed on an "AS IS" BASIS,
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+Project Author: Apache Software Foundation
+*
+Project Author: Google
+*
+*   3. The names of the authors may not be used to endorse or promote products
+* ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Used For: Compiling Java to JS, JRE implementation
+Note: Eaglercraft is not OptiFine, we only use the code for connected textures
+* limitations under the License.
+Project URL: https://java-diff-utils.github.io/java-diff-utils/
+* (the "License"); you may not use this file except in compliance with
+* ------------------------------------------------------------------------------
+*
+* BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+* All rights reserved.
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* 7) I the author do not guarantee, warrant, or make any representations,
+* License is here: https://www.eclipse.org/legal/epl-2.0/
+* copies of the Software, and to permit persons to whom the Software is
+* file and include the License file at LICENSE.txt.
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+*
+* file that accompanied this code.
+* accompanied this code).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+- Made the patch and build system
+Project URL: http://nanohttpd.org/
+* software without specific prior written permission.
+* Oracle designates this particular file as subject to the "Classpath"
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* SOFTWARE.
+Project Author: md_5
+* questions.
+* JOrbis has been based on their awesome works, Vorbis codec.
+* only if the new code is made subject to such option by the copyright
+* Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+* limitations under the License.
+* Redistributions of source code must retain the above copyright notice, this
+* Copyright 2019 Alex Andres
+- Made the integrated PBR resource pack
+* POSSIBILITY OF SUCH DAMAGE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+* Copyright 2014 Alexey Andreev.
+* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+* (the "License"); you may not use this file except in compliance with
+*      http://www.apache.org/licenses/LICENSE-2.0
+Used For: Default skin cache and authentication JDBC driver in EaglerXBungee
+* OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR
+*
+Project URL: ??
+Project Name: ObjectWeb ASM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Used For: WebSockets in desktop runtime
+* either the CDDL, the GPL Version 2 or to extend the choice of license to
+* Unless required by applicable law or agreed to in writing, software
+* modification, are permitted provided that the following conditions are met:
+* OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+* LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+Project Name: TeaVM
+*
+* Neither the name of the NanoHttpd organization nor the names of its
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+*
+* The ASF licenses this file to You under the Apache License, Version 2.0
+- Added screen recording
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* DEALINGS IN THE SOFTWARE.
+Project Author: Carrot Search
+*                     NVIDIA FXAA 3.11 by TIMOTHY LOTTES
+Project Author: Red Studio
+* Redistribution and use in source and binary forms, with or without
+* limitations under the License.
+* written permission from the author.
+Project URL: https://www.bouncycastle.org/java.html
+* the License.  You may obtain a copy of the License at
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* Copyright (c) 2012-2013 by Paul S. Hawke,
+*
+* without advance written permission.
+*   The XIPHOPHORUS Company http://www.xiph.org/ .
+* furnished to do so, subject to the following conditions:
+* are met:
+* you may not use this file except in compliance with the License.
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* contributor license agreements.  See the NOTICE file distributed with
+* The Netty Project licenses this file to you under the Apache License, version 2.0 (the
+* TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
+* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+* You may not use the software for commercial software hosting services without
+Project Name: OpenJDK
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+* in the Software without restriction, including without limitation the rights
+*
+*
+Project Author: Sean Leary (stleary)
+- WebRTC voice chat
+*
+* copy, modify, merge, publish, distribute, sublicense, and/or sell
+* distributed under the License is distributed on an "AS IS" BASIS,
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+Project Author: Apache Software Foundation
+Used For: TeaVM compatible String.format implementation
+* Copyright (C) 2000 ymnk, JCraft,Inc.
+*
+- Worked on touch support
+*   its contributors may be used to endorse or promote products derived
+* Permission to use, copy, modify, and/or distribute this
+* COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+* and/or other materials provided with the distribution.
+Used For: Math library for some calculations used by the renderer
+Project Name: Apache Commons Lang
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* subject to the following conditions:
+* http://www.paulscode.com
+* limitations under the License.
+* Redistribution and use in source and binary forms, with or without
+- Made the default shader pack
+* (C) Copyright IBM Corp. 1999-2003 - All Rights Reserved
+Used For: Decompressing the WASM runtime
+*
+* limitations under the License.
+* ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+*    notice, this list of conditions and the following disclaimer.
+* (the "License"); you may not use this file except in compliance with
+Project Name: fix-webm-duration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*
+* copies or substantial portions of the Software.
+* CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+* INC. OR ANY CONTRIBUTORS TO THIS SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
+* THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+Project Name: java-diff-utils
+Project URL: https://openjdk.org/projects/jdk/17/
+* including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Used For: loading mod coder pack config files in build system
+*
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* distributed under the License is distributed on an "AS IS" BASIS,
+* this list of conditions and the following disclaimer in the documentation
+- Made the shared world relay server
+* General Public License Version 2 only ("GPL") or the Common Development
+* 2010 by Konstantinos Togias All rights reserved.
+* Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+* furnished to do so, subject to the following conditions:
+*
+Project Name: OptiFine (1.8.9_HD_U_M6)
+*    notice, this list of conditions and the following disclaimer in the
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+*
+* Unless required by applicable law or agreed to in writing, software
+*
+* 2. Redistributions in binary form must reproduce the above copyright
+*     http://www.apache.org/licenses/LICENSE-2.0
+* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+Project Author: Taro L. Saito (xerial)
+*
+Project URL: https://github.com/JOML-CI/JOML
+* and associated documentation files (the "Software"), to deal in the Software without restriction,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* Unless required by applicable law or agreed to in writing, software
+* particular file as subject to the "Classpath" exception as provided
+*     copyright notice, this list of conditions and the following
+* Redistribution and use in source and binary forms, with or without
+*
+*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Project URL: https://tukaani.org/xz/embedded.html
+* 3) You may not copyright this library or a modified version of it and then
+* The mod OptiFine is Copyright © 2011-2021 by sp614x and the intellectual
+*
+Used For: Dependency for Google Guava
+Project URL: https://commons.apache.org/proper/commons-csv/
+* you may not use this file except in compliance with the License.
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION,
+*
+cire3:
+* Contributor(s):
+* ==============================================================================
+*      http://www.apache.org/licenses/LICENSE-2.0
+* copyrighted and owned by IBM. These materials are provided
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* limitations under the License.
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+* CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+- Many bug fixes
+Used For: Formatting source code in build system before making diffs
+* published by the Free Software Foundation.  Oracle designates this
+* or visit www.oracle.com if you need additional information or have any
+* The MIT License (MIT)
+* This technology is protected by multiple US and International
+* list of conditions and the following disclaimer.
+* limitations under the License.
+* unmodified portion of it.
+Project URL: http://labs.carrotsearch.com/hppc.html
+* are met:
+* License along with this program; if not, write to the Free Software
+* WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+* Written by: 2000 ymnk<ymnk@jcraft.com>
+* Redistribution and use in source and binary forms, with or without
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* exception as provided by Oracle in the GPL Version 2 section of the License
+* GNU Library General Public License for more details.
+Project Name: XZ for Java
+Used For: OpenGL, OpenAL, and GLFW bindings in desktop debug runtime
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+* contributor license agreements.  See the NOTICE file distributed with
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+Project Name: NVIDIA FXAA
+*
+~~~~~~~~~~~~~~~~~~~~~~~
+Project Author: Eclipse Foundation
+* this work for additional information regarding copyright ownership.
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+*
+*
+* THIS SOFTWARE, EVEN IF NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+* CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+* Licensed to the Apache Software Foundation (ASF) under one or more
+Project Name: Eclipse IDE Java Formatter
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* enclosed by brackets [] replaced by your own identifying information:
+* ------------------------------------------------------------------------------
+* POSSIBILITY OF SUCH DAMAGE.
+* LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+* obtaining a copy of this software and associated documentation
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+- Creator of Eaglercraft
+Project URL: https://www.lwjgl.org
+* CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*
+* Many thanks to
+Project URL: http://www.jcraft.com/jorbis/
+*
+* If you wish your version of this file to be governed by only the CDDL or
+Project URL: https://github.com/stleary/JSON-java
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+*
+Project Author: Oracle, IBM
+* You may obtain a copy of the License at
+* COPYRIGHT (C) 2010, 2011 NVIDIA CORPORATION. ALL RIGHTS RESERVED.
+* modification, are permitted provided that the following conditions
+*
+(sorry sp614x)
+* or implied. See the License for the specific language governing permissions and limitations under
+* CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* See the License for the specific language governing permissions and
+* Redistributions in binary form must reproduce the above copyright notice,
+* GPL Classpath Exception:
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+Project Author: Spasi
+Project Name: Java-WebSocket
+* You may obtain a copy of the License at
+Project URL: https://teavm.org/
+EaglercraftX Developers
+Project Name: BungeeCord
+and maintaining compatibility with certain resource pack features
+*
+*     disclaimer in the documentation and/or other materials provided
+Project Name: Apache Commons Codec
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* "Portions Copyright [year] [name of copyright owner]"
+Project URL: https://www.spigotmc.org/go/bungeecord/
+* you may not use this file except in compliance with the License.
+Used For: Primitive collections library for the client
+Project Name: 3D Sound System
+* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+Project Author: Nathan Rajlich (TooTallNate)
+* SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+Project Author: Oracle Inc.
+* limitations under the License.
+*
+* only the GPL Version 2, indicate your decision by adding "[Contributor]
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* See the License for the specific language governing permissions and
+* recipient has the option to distribute your version of this file under
+* THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+* Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+* You may obtain a copy of the License at
+*
+Project Author: The Legion of the Bouncy Castle
+* FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+* DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+*
+*
+*
+*
+*
+* ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+*      http://www.apache.org/licenses/LICENSE-2.0
+Project Name: Google Guava
+* Copyright (c) 2012-present Lightweight Java Game Library
+* furnished to do so, subject to the following conditions:
+* See the License for the specific language governing permissions and
+*     Ltd., nor the names of their contributors may be used to endorse
+* modification, are permitted provided that the following conditions
+*
+Project Name: JOrbis
+*
+* DAMAGES.
+* EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+* contributor license agreements.  See the NOTICE file distributed with
+* INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+* It may not be placed on any web site or otherwise distributed publicly
+Project Author: Alexey Andreev
+* Use of this mod on any other website or as a part of any public display
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* list of conditions and the following disclaimer.
+* You should have received a copy of the GNU General Public License version
+*
+Used For: Compiling the WASM runtime's loader.wasm program
+*
+* Unless required by applicable law or agreed to in writing, software
+*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ayunami2000:
+* version 2 for more details (a copy is included in the LICENSE file that
+Used For: HTTP server in the desktop runtime
+* SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+* Copyright 2015 The Netty Project
+* JOrbis
+* You should have received a copy of the GNU Library General Public
+* - Neither the name Lightweight Java Game Library nor the names of
+* modification, are permitted provided that the following conditions are met:
+Used For: parsing method signatures in build system
+*   1. Redistributions of source code must retain the above copyright notice,
+* Software is furnished to do so, subject to the following
+* Licensed under the Apache License, Version 2.0 (the "License");
+* "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*
+Used For: simplifying file IO in build system
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* software for any purpose with or without fee is hereby granted.
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+Project Author: Google
+* contributor license agreements.  See the NOTICE file distributed with
+Used For: Optimized lighting engine
+Project URL: https://commons.apache.org/proper/commons-io/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* copies or substantial portions of the Software.
+* modification, are permitted provided that the following conditions are
+* The above copyright notice and this permission notice shall be included in all
+* PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+* Version 2] license."  If you don't indicate a single choice of license, a
+*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+* all copies or substantial portions of the Software.
+* either expressed or implied, regarding the use of this library or any part of
+Project URL: https://netty.io/
+- Created the replit
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* Unless required by applicable law or agreed to in writing, software
+* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* The name of the author may not be used to endorse or promote products derived
+*
+- Made the multiplayer backends
+* the License.  You may obtain a copy of the License at
+Project Name: ANGLE
+* 2) You may not falsely claim to be the author of this library or any
+lax1dude:
+*
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*   documentation and/or other materials provided with the distribution.
+*
+* 1) You must abide by the conditions of the aforementioned LWJGL License.
+*
+* Unless required by applicable law or agreed to in writing, software
+*
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* Unless required by applicable law or agreed to in writing, software distributed under the License
+*
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* by Oracle in the LICENSE file that accompanied this code.
+* MIT License
+* THE POSSIBILITY OF SUCH DAMAGE.
+* Redistributions in binary form must reproduce the above copyright notice,
+* Copyright (c) 2015-2023 JOML
+Used For: 'ByteBuf' classes implementations for Minecraft 1.8's networking engine
+* INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+*      http://www.apache.org/licenses/LICENSE-2.0
+Project Name: High Performance Primitive Collections
+*
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+* Copyright (c) 2010-2020 Nathan Rajlich
+*
+* Redistribution and use in source and binary forms, with or without
+Project Name: XZ Embedded
+* Copyright (c) 2011 ymnk, JCraft,Inc. All rights reserved.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* holder.
+* NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+* Redistribution and use in source and binary forms, with or without
+*
+* PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*
+*     or promote products derived from this software without specific
+* 6) I the author will not be responsible for any damages (physical, financial,
+* Unless required by applicable law or agreed to in writing, software
+*      this list of conditions and the following disclaimer.
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* copies of the Software, and to permit persons to whom the
+* it.
+* and/or other materials provided with the distribution.
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* this work for additional information regarding copyright ownership.
+*
+* in the Software without restriction, including without limitation the rights
+* LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+*    documentation and/or other materials provided with the distribution.
+* When distributing the software, include this License Header Notice in each
+* The original version of this source code and documentation is
+*
+*      notice, this list of conditions and the following disclaimer in
+* PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+Project URL: https://optifine.net/
+Project URL: https://tukaani.org/xz/java.html
+* Copyright (c) 2012, md_5. All rights reserved.
+Project Author: Apache Software Foundation
+* LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+* Copyright (c) 2018 Yury Sitnikov
+*
+* copies of the Software, and to permit persons to whom the Software is
+Project Name: NanoHTTPD
+Used For: OpenGL ES 3.0 emulation in desktop debug runtime
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* SOFTWARE.
+* Permission to use, copy, modify, and/or distribute this
+* (the "License"); you may not use this file except in compliance with
+*     with the distribution.
+* in the Software without restriction, including without limitation the rights
+* See the License for the specific language governing permissions and
+* conditions:
+*      derived from this software without specific prior written permission.
+* Copyright 2010-2013, Carrot Search s.c., Boznicza 11/56, Poznan, Poland
+Project Name: Netty
+Project Name: JOML
+* See the License for the specific language governing permissions and
+Project URL: https://emscripten.org/
+Project Author: ymnk, JCraft Inc.
+*
+*
+* 1. Redistributions of source code must retain the above copyright
+* The MIT license
+Project URL: https://github.com/Red-Studio-Ragnarok/Alfheim
+* copies of the Software, and to permit persons to whom the Software is
+* - Redistributions of source code must retain the above copyright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* POSSIBILITY OF SUCH DAMAGE.
+* SoundSystem License:
+Project Author: Alex Andres
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+*
+* SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+Project URL: http://www.jcraft.com/jzlib/
+Project Author: Netty Project
+*     Neither the name of TransGaming Inc., Google Inc., 3DLabs Inc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+* Copyright (c) 2023 Red Studio
+* The above copyright notice and this permission notice shall be included in all
+* all copies or substantial portions of the Software.
+- Created the Gradle plugin
+Project Author: Yury Sitnikov
+* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+* copies of the Software, and to permit persons to whom the Software is
+Project Author: Lasse Collin (Larhzu)
+* copy of the License at:
