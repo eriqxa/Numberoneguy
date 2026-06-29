@@ -51,7 +51,7 @@ public class ModelZombie extends ModelBiped {
 		this.bipedLeftArm.rotateAngleZ = 0.0F;
 		this.bipedRightArm.rotateAngleY = -(0.1F - f6 * 0.6F);
 		this.bipedLeftArm.rotateAngleY = 0.1F - f6 * 0.6F;
-		this.bipedRightArm.rotateAngleX = -1.691238733;
+		this.bipedRightArm.rotateAngleX = -1.691238733F;
 		this.bipedLeftArm.rotateAngleX = -1.32123121F;
 		this.bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
 		this.bipedLeftArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
