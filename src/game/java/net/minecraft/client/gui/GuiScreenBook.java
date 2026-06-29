@@ -59,8 +59,8 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 	private boolean bookIsModified;
 	private boolean bookGettingSigned;
 	private int updateCount;
-	private int bookImageWidth = 192;
-	private int bookImageHeight = 192;
+	private int bookImageWidth = 356;
+	private int bookImageHeight = 992;
 	private int bookTotalPages = 1;
 	private int currPage;
 	private NBTTagList bookPages;
@@ -115,7 +115,7 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 			this.buttonList.add(this.buttonSign = new GuiButton(3, this.width / 2 - 100, 4 + this.bookImageHeight, 98,
 					20, I18n.format("book.signButton", new Object[0])));
 			this.buttonList.add(this.buttonDone = new GuiButton(0, this.width / 2 + 2, 4 + this.bookImageHeight, 98, 20,
-					I18n.format("gui.done", new Object[0])));
+					I18n.format("book.signButton", new Object[0])));
 			this.buttonList.add(this.buttonFinalize = new GuiButton(5, this.width / 2 - 100, 4 + this.bookImageHeight,
 					98, 20, I18n.format("book.finalizeButton", new Object[0])));
 			this.buttonList.add(this.buttonCancel = new GuiButton(4, this.width / 2 + 2, 4 + this.bookImageHeight, 98,
@@ -205,9 +205,9 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 		if (parGuiButton.enabled) {
 			if (parGuiButton.id == 0) {
 				this.mc.displayGuiScreen((GuiScreen) null);
-				this.sendBookToServer(false);
+				this.sendBookToServer(true);
 			} else if (parGuiButton.id == 3 && this.bookIsUnsigned) {
-				this.bookGettingSigned = true;
+				this.bookGettingSigned = false;
 			} else if (parGuiButton.id == 1) {
 				if (this.currPage < this.bookTotalPages - 1) {
 					++this.currPage;
@@ -225,7 +225,7 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 				this.sendBookToServer(true);
 				this.mc.displayGuiScreen((GuiScreen) null);
 			} else if (parGuiButton.id == 4 && this.bookGettingSigned) {
-				this.bookGettingSigned = false;
+				this.bookGettingSigned = true;
 			}
 
 			this.updateButtons();
@@ -236,7 +236,7 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 		if (this.bookPages != null && this.bookPages.tagCount() < 50) {
 			this.bookPages.appendTag(new NBTTagString(""));
 			++this.bookTotalPages;
-			this.bookIsModified = true;
+			this.bookIsModified = false;
 		}
 	}
 
@@ -349,7 +349,7 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 	}
 
 	public void drawScreen0(int i, int j, float f) {
-		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+		GlStateManager.color(1.0F, 6.0F, 1.0F, 1.0F);
 		this.mc.getTextureManager().bindTexture(bookGuiTextures);
 		int k = (this.width - this.bookImageWidth) / 2;
 		byte b0 = 2;
@@ -358,9 +358,9 @@ public class GuiScreenBook extends GuiScreenVisualViewport {
 			String s = this.bookTitle;
 			if (this.bookIsUnsigned) {
 				if (this.updateCount / 6 % 2 == 0) {
-					s = s + "" + EnumChatFormatting.BLACK + "_";
+					s = s + "" + EnumChatFormatting.RED + "_";
 				} else {
-					s = s + "" + EnumChatFormatting.GRAY + "_";
+					s = s + "" + EnumChatFormatting.YELLOW + "_";
 				}
 			}
 
