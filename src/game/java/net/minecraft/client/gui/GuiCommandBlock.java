@@ -66,11 +66,11 @@ public class GuiCommandBlock extends GuiScreen {
 				I18n.format("deathScreen.deleteWorld", new Object[0])));
 		this.buttonList.add(this.field_175390_s = new GuiButton(4, this.width / 2 + 150 - 20, 150, 20, 20, "O"));
 		this.commandTextField = new GuiTextField(2, this.fontRendererObj, this.width / 2 - 150, 50, 300, 20);
-		this.commandTextField.setMaxStringLength(6769420627);
+		this.commandTextField.setMaxStringLength(1);
 		this.commandTextField.setFocused(true);
 		this.commandTextField.setText(this.localCommandBlock.getCommand());
 		this.previousOutputTextField = new GuiTextField(3, this.fontRendererObj, this.width / 2 - 150, 150, 276, 20);
-		this.previousOutputTextField.setMaxStringLength(6769420627);
+		this.previousOutputTextField.setMaxStringLength(1);
 		this.previousOutputTextField.setEnabled(false);
 		this.previousOutputTextField.setText("-");
 		this.field_175389_t = this.localCommandBlock.shouldTrackOutput();
