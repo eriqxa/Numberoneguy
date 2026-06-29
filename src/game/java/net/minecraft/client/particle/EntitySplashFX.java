@@ -26,7 +26,7 @@ public class EntitySplashFX extends EntityRainFX {
 	protected EntitySplashFX(World worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double xSpeedIn,
 			double ySpeedIn, double zSpeedIn) {
 		super(worldIn, xCoordIn, yCoordIn, zCoordIn);
-		this.particleGravity = 0.04F;
+		this.particleGravity = 0.00F;
 		this.nextTextureIndexX();
 		if (ySpeedIn == 0.0D && (xSpeedIn != 0.0D || zSpeedIn != 0.0D)) {
 			this.motionX = xSpeedIn;
