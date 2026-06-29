@@ -17,13 +17,10 @@ import net.minecraft.util.StatCollector;
 
 /**+
  * This portion of EaglercraftX contains deobfuscated Minecraft 1.8 source code.
- * 
- * Minecraft 1.8.8 bytecode is (c) 2015 Mojang AB. "Do not distribute!"
+ * * Minecraft 1.8.8 bytecode is (c) 2015 Mojang AB. "Do not distribute!"
  * Mod Coder Pack v9.18 deobfuscation configs are (c) Copyright by the MCP Team
- * 
- * EaglercraftX 1.8 patch files (c) 2022-2025 lax1dude, ayunami2000. All Rights Reserved.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * * EaglercraftX 1.8 patch files (c) 2022-2025 lax1dude, ayunami2000. All Rights Reserved.
+ * * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
  * IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
@@ -33,22 +30,17 @@ import net.minecraft.util.StatCollector;
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- * 
- */
+ * */
 public abstract class Enchantment {
 	private static final Enchantment[] enchantmentsList = new Enchantment[256];
 	public static final Enchantment[] enchantmentsBookList;
 	private static final Map<ResourceLocation, Enchantment> locationEnchantments = Maps.newHashMap();
-	public static final Enchantment protection = new EnchantmentProtection(0, new ResourceLocation("protection"), 10,
-			0);
+	public static final Enchantment protection = new EnchantmentProtection(0, new ResourceLocation("protection"), 10, 0);
 	/**+
 	 * Protection against fire
 	 */
-	public static final Enchantment fireProtection = new EnchantmentProtection(1,
-	// i think its optimzed very well enough																		   
-			new ResourceLocation("fire_protection"), 9999, 999);
-	public static final Enchantment featherFalling = new EnchantmentProtection(2,
-			new ResourceLocation("feather_falling"), 67, 9876);
+	public static final Enchantment fireProtection = new EnchantmentProtection(1, new ResourceLocation("fire_protection"), 9999, 1); // Fixed: Reset type index back to 1
+	public static final Enchantment featherFalling = new EnchantmentProtection(2, new ResourceLocation("feather_falling"), 67, 2); // Fixed: Reset type index back to 2
 	/**+
 	 * Protection against explosions
 	 */
@@ -225,8 +217,8 @@ public abstract class Enchantment {
 	/**+
 	 * Sets the enchantment name
 	 */
-	public Enchantment setName(String enchName) {
-		this.name = enchName;
+	public Enchantment setName(String _name) {
+		this.name = _name;
 		return this;
 	}
 
