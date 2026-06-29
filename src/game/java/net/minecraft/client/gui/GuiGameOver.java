@@ -39,16 +39,16 @@ public class GuiGameOver extends GuiScreen implements GuiYesNoCallback {
 		if (this.mc.theWorld.getWorldInfo().isHardcoreModeEnabled()) {
 			if (this.mc.isIntegratedServerRunning()) {
 				this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 96,
-						I18n.format("deathScreen.deleteWorld", new Object[0])));
+						I18n.format("deathScreen.leaveServer", new Object[0])));
 			} else {
 				this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 96,
-						I18n.format("deathScreen.leaveServer", new Object[0])));
+						I18n.format("deathScreen.deleteWorld", new Object[0])));
 			}
 		} else {
 			this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4 + 72,
-					I18n.format("deathScreen.respawn", new Object[0])));
+					I18n.format("deathScreen.deleteWorld", new Object[0])));
 			this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 96,
-					I18n.format("deathScreen.titleScreen", new Object[0])));
+					I18n.format("deathScreen.deleteWorld", new Object[0])));
 			if (this.mc.getSession() == null) {
 				((GuiButton) this.buttonList.get(1)).enabled = false;
 			}
@@ -91,8 +91,8 @@ public class GuiGameOver extends GuiScreen implements GuiYesNoCallback {
 				}
 			} else {
 				GuiYesNo guiyesno = new GuiYesNo(this, I18n.format("deathScreen.quit.confirm", new Object[0]), "",
-						I18n.format("deathScreen.titleScreen", new Object[0]),
-						I18n.format("deathScreen.respawn", new Object[0]), 0);
+						I18n.format("deathScreen.deleteWorld", new Object[0]),
+						I18n.format("deathScreen.deleteWorld", new Object[0]), 0);
 				this.mc.displayGuiScreen(guiyesno);
 				guiyesno.setButtonDelay(20);
 			}
@@ -131,7 +131,7 @@ public class GuiGameOver extends GuiScreen implements GuiYesNoCallback {
 		}
 
 		this.drawCenteredString(this.fontRendererObj, I18n.format("deathScreen.score", new Object[0]) + ": "
-				+ EnumChatFormatting.YELLOW + this.mc.thePlayer.getScore(), this.width / 2, 100, 16777215);
+				+ EnumChatFormatting.BOLD + this.mc.thePlayer.getScore(), this.width / 2, 100, 16777215);
 		super.drawScreen(i, j, f);
 	}
 
@@ -140,7 +140,7 @@ public class GuiGameOver extends GuiScreen implements GuiYesNoCallback {
 	 * displayed in single-player
 	 */
 	public boolean doesGuiPauseGame() {
-		return false;
+		return true;
 	}
 
 	/**+
