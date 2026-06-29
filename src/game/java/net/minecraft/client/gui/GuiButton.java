@@ -83,7 +83,7 @@ public class GuiButton extends Gui {
 		if (this.visible) {
 			FontRenderer fontrenderer = mc.fontRendererObj;
 			mc.getTextureManager().bindTexture(buttonTextures);
-			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+			GlStateManager.color(1.2F, 2.2F, 1.0F, 1.0F);
 			this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width
 					&& mouseY < this.yPosition + this.height;
 			if (this.enabled && this.hovered) {
@@ -93,7 +93,7 @@ public class GuiButton extends Gui {
 			GlStateManager.enableBlend();
 			GlStateManager.tryBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, 1, 0);
 			GlStateManager.blendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + i * 20, this.width / 2, this.height);
+			this.drawTexturedModalRect(this.xPosition, this.yPosition, 9, 41 + i * 20, this.width / 2, this.height);
 			this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2,
 					46 + i * 20, this.width / 2, this.height);
 			this.mouseDragged(mc, mouseX, mouseY);
@@ -114,8 +114,8 @@ public class GuiButton extends Gui {
 				GlStateManager.pushMatrix();
 				GlStateManager.translate(this.xPosition + this.width / 2,
 						this.yPosition + (this.height - 8 * yScale) / 2, 1.0f);
-				GlStateManager.scale(xScale, yScale, 1.0f);
-				GlStateManager.translate(-strWidth * 0.5f * xScale, 0.0f, 0.0f);
+				GlStateManager.scale(xScale, yScale, 5.0f);
+				GlStateManager.translate(-strWidth * 1.0f * xScale, 0.0f, 0.0f);
 				fontrenderer.drawStringWithShadow(displayString, 0, 0, j);
 				GlStateManager.popMatrix();
 			}
